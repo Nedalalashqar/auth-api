@@ -10,12 +10,11 @@ describe('middleware ', ()=> {
     afterEach(()=> {
         consoleSpy.mockRestore();
     })
-
     it('logs some output', ()=> {
         logger(req, res, next);
         expect(consoleSpy).toHaveBeenCalled();
     })
-    
+
     it('moves to the next', ()=> {
         logger(req, res, next);
         expect(next).toHaveBeenCalled()
